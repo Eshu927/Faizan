@@ -75,21 +75,11 @@
         .attention-banner { background: linear-gradient(-45deg, #05070a, var(--accent-gold), var(--accent-orange), #05070a); background-size: 400% 400%; color: #ffffff; padding: 15px 30px; text-align: center; font-weight: 700; font-size: 16px; animation: gradientBG 10s ease infinite; cursor: pointer; border-bottom: 2px solid #ffffff; letter-spacing: 0.5px; text-transform: uppercase; }
         @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
-        /* Hero Section with Sky Blue Background & Continuous Moving Bubble Animation */
+        /* Hero Section */
         .hero { position: relative; background: linear-gradient(135deg, #0284c7, #0369a1, #38bdf8); padding: 100px 20px; text-align: center; border-bottom: 2px solid var(--border-color); overflow: hidden; animation: heroEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-
-        @keyframes heroEntrance {
-            0% { opacity: 0; transform: translateY(-30px) scale(0.98); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        .hero-bg-anim { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: 
-            radial-gradient(rgba(255, 255, 255, 0.4) 4px, transparent 4px),
-            radial-gradient(rgba(251, 191, 36, 0.3) 6px, transparent 6px);
-            background-size: 120px 120px, 180px 180px;
-            animation: heroAnimMove 15s linear infinite; pointer-events: none; z-index: 1; }
+        @keyframes heroEntrance { 0% { opacity: 0; transform: translateY(-30px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+        .hero-bg-anim { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(rgba(255, 255, 255, 0.4) 4px, transparent 4px), radial-gradient(rgba(251, 191, 36, 0.3) 6px, transparent 6px); background-size: 120px 120px, 180px 180px; animation: heroAnimMove 15s linear infinite; pointer-events: none; z-index: 1; }
         @keyframes heroAnimMove { 0% { background-position: 0 0, 0 0; } 100% { background-position: 240px 240px, 360px 360px; } }
-
         .hero > * { position: relative; z-index: 2; }
         .hero h1 { font-size: 42px; margin-bottom: 15px; color: #ffffff; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 3px 10px rgba(0,0,0,0.4); }
         .hero h1 span { color: var(--accent-gold); }
@@ -100,7 +90,7 @@
         .btn-secondary { background: transparent; color: #ffffff; border: 2px solid rgba(255,255,255,0.4); padding: 10px 28px; border-radius: 30px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; }
         .btn-secondary:hover { border-color: var(--accent-gold); color: var(--accent-gold); transform: translateY(-3px); }
 
-        /* Improved Card Backgrounds for Sections */
+        /* Instagram Section */
         .instagram-section { background: linear-gradient(145deg, #131b2e, #0b101b); border: 1px solid var(--border-color); max-width: 600px; margin: 50px auto; padding: 30px; border-radius: 20px; text-align: center; box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.4s ease; }
         .instagram-section:hover { transform: translateY(-5px); border-color: var(--accent-gold); box-shadow: 0 20px 40px rgba(251, 191, 36, 0.2); }
         .ig-header { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 10px; }
@@ -117,13 +107,10 @@
         .leadership-section h2 span { color: var(--accent-gold); }
         .leadership-section > p { text-align: center; color: var(--text-muted); font-size: 15px; margin-bottom: 40px; }
         .leadership-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        
         .leader-card { background: linear-gradient(145deg, #131b2e, #0b101b); border: 1px solid var(--border-color); border-radius: 20px; padding: 30px; text-align: center; box-shadow: var(--card-shadow); transition: all 0.4s ease; cursor: pointer; position: relative; overflow: hidden; }
         .leader-card:hover { transform: translateY(-6px); border-color: var(--accent-gold); box-shadow: 0 20px 40px rgba(251, 191, 36, 0.2); }
-
         .leader-img-box { width: 90px; height: 90px; border-radius: 50%; overflow: hidden; margin: 0 auto 15px; border: 3px solid var(--accent-gold); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
         .leader-img-box img { width: 100%; height: 100%; object-fit: cover; }
-
         .leader-card h3 { color: #ffffff; font-size: 22px; margin-bottom: 5px; font-weight: 700; }
         .leader-card .role { color: var(--accent-gold); font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: block; letter-spacing: 1px; }
         .leader-card p { color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 25px; text-align: justify; }
@@ -131,7 +118,7 @@
         .s-btn { background: rgba(251,191,36,0.1); color: var(--accent-gold); border: 1px solid var(--border-color); padding: 8px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; }
         .s-btn:hover { background: var(--accent-gold); color: var(--bg-deep); }
 
-        /* Separate Gallery & Video Sections with Multi-Color Cards & 25-30 Words Paragraphs */
+        /* Separate Gallery & Video Sections with Multi-Color Cards */
         .gallery-container, .video-container { max-width: 1300px; margin: 60px auto; padding: 0 20px; }
         .gallery-container h2, .video-container h2 { text-align: center; font-size: 32px; color: #ffffff; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; }
         .gallery-container h2 span, .video-container h2 span { color: var(--accent-gold); }
@@ -147,12 +134,21 @@
         }
         .gallery-card:hover, .video-card:hover { transform: translateY(-6px) scale(1.02); }
         
-        .media-box { width: 100%; height: 180px; border-radius: 12px; overflow: hidden; position: relative; }
+        .media-box { width: 100%; height: 180px; border-radius: 12px; overflow: hidden; position: relative; background: #000; }
         .gallery-card img, .video-card video { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
         .gallery-card:hover img, .video-card:hover video { transform: scale(1.1); }
         
-        /* 25-30 words descriptive text under media box */
-        .media-desc { color: var(--text-muted); font-size: 13px; line-height: 1.6; text-align: center; margin-top: 15px; margin-bottom: 5px; }
+        /* Text hidden by default on main page */
+        .media-desc { display: none; }
+        
+        /* Zoomed card styles with line divider and clean text sizing */
+        .zoomed-card .media-box { width: 100%; height: auto; max-height: 50vh; background: #000; }
+        .zoomed-card img, .zoomed-card video { width: 100%; height: auto; border-radius: 12px; max-height: 50vh; object-fit: contain; }
+        
+        /* Divider line inside zoomed card */
+        .zoomed-divider { width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent); margin: 20px 0; }
+        
+        .zoomed-card .media-desc { display: block; color: var(--text-muted); font-size: 13px; line-height: 1.6; text-align: center; }
 
         /* Info Section */
         .info-section { max-width: 1000px; margin: 60px auto; background: linear-gradient(145deg, #131b2e, #0b101b); border: 1px solid var(--border-color); border-radius: 20px; padding: 45px; box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.4s ease; }
@@ -165,7 +161,7 @@
         .zoom-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 7, 10, 0.95); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.5s ease; backdrop-filter: blur(5px); }
         .zoom-overlay.active { opacity: 1; visibility: visible; }
 
-        .zoomed-card { width: 90%; max-width: 650px; background: var(--bg-card); border: 2px solid var(--accent-gold); border-radius: 25px; padding: 40px; position: relative; transform: scale(0.5); transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 30px 60px rgba(0,0,0,0.9); cursor: zoom-out; max-height: 90vh; overflow-y: auto; }
+        .zoomed-card { width: 90%; max-width: 600px; background: var(--bg-card); border: 2px solid var(--accent-gold); border-radius: 25px; padding: 35px; position: relative; transform: scale(0.5); transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 30px 60px rgba(0,0,0,0.9); cursor: zoom-out; max-height: 90vh; overflow-y: auto; }
         .zoom-overlay.active .zoomed-card { transform: scale(1); }
         
         .close-zoom { position: absolute; top: 20px; right: 20px; color: #ffffff; font-size: 30px; cursor: pointer; background: var(--bg-deep); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--accent-gold); z-index: 10; }
@@ -371,59 +367,79 @@
         </div>
     </div>
 
-    <!-- Separate Video Gallery Section (10 Videos Cards) -->
+    <!-- Separate Video Gallery Section (10 Videos Cards with Zoom Support & Preload) -->
     <div class="video-container">
         <h2>Our Video <span>Gallery</span></h2>
         <p>Watch live operational clips and behind-the-scenes video highlights from our active printing press floor.</p>
         <div class="video-grid">
             
             <div class="video-card" onclick="zoomCard(this)">
-                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
-                <p class="media-desc">Watch a complete live demonstration of our high-speed offset printing machine operating smoothly to fulfill large-scale commercial publishing orders efficiently.</p>
+                <div class="media-box">
+                    <video src="videos/iam_faixu_313.mp4" preload="metadata" muted playsinline></video>
+                </div>
+                <p class="media-desc">Precision honey jar label printing and high-definition road safety awareness poster production at our press, showcasing our expertise in custom product packaging and institutional printing</p>
             </div>
 
             <div class="video-card" onclick="zoomCard(this)">
-                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
-                <p class="media-desc">Observe the fascinating process of hot foil stamping in action, creating brilliant metallic gold and silver impressions on luxury packaging boxes.</p>
+                <div class="media-box">
+                    <video src="videos/rambo.mp4" preload="metadata" muted playsinline></video>
+                </div>
+                <p class="media-desc">A quick look inside our advanced printing studio featuring high-speed large format printing machines and vibrant custom flex banner production at Rainbow Graphics.</p>
             </div>
 
             <div class="video-card" onclick="zoomCard(this)">
-                <div class="media-box"><video src="videos/musavir_mir45_20260925_175131_952.mp4musavir_mir45_20260925_175131_952.mp4" autoplay muted loop playsinline></video></div>
-                <p class="media-desc">Catch a glimpse of our automated book binding unit stitching and gluing multiple notebook sections together with flawless structural precision.</p>
+                <div class="media-box">
+                    <video src="videos/ishu.mp4" preload="metadata" muted playsinline></video>
+                </div>
+                <p class="media-desc">Bringing your brand to life with expert craftsmanship! Watch our team design, weld, and install a stunning glowing outdoor signboard for Maajid's Trout Fish Farm in Shopian</p>
             </div>
 
             <div class="video-card" onclick="zoomCard(this)">
-                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
-                <p class="media-desc">See our advanced digital printing setup executing rapid color prints with incredible clarity and vibrant hues for urgent customer requests.</p>
+                <div class="media-box">
+                    <video src="videos/Kashmiri.mp4" preload="metadata" muted playsinline></video>
+                </div>
+                <p class="media-desc">From high-resolution printing to professional storefront branding! Watch our team craft and install striking promotional boards for 'The Kashmiri Grills</p>
             </div>
 
             <div class="video-card" onclick="zoomCard(this)">
-                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <div class="media-box">
+                    <video src="" preload="metadata" muted playsinline></video>
+                </div>
                 <p class="media-desc">Experience our heavy-duty paper cutting machine trimming massive stacks of paper with absolute accuracy and seamless operational safety.</p>
             </div>
 
             <div class="video-card" onclick="zoomCard(this)">
-                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <div class="media-box">
+                    <video src="" preload="metadata" muted playsinline></video>
+                </div>
                 <p class="media-desc">Watch our lamination machine applying protective glossy coatings over printed menu cards to safeguard them against spills and daily wear.</p>
             </div>
 
             <div class="video-card" onclick="zoomCard(this)">
-                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <div class="media-box">
+                    <video src="" preload="metadata" muted playsinline></video>
+                </div>
                 <p class="media-desc">Take a quick tour of our laser cutting suite carving complex artistic patterns on premium wedding invitation cards with extreme precision.</p>
             </div>
 
             <div class="video-card" onclick="zoomCard(this)">
-                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <div class="media-box">
+                    <video src="" preload="metadata" muted playsinline></video>
+                </div>
                 <p class="media-desc">Observe our quality inspection team carefully examining finished prints under bright studio lights to catch even minor imperfections instantly.</p>
             </div>
 
             <div class="video-card" onclick="zoomCard(this)">
-                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <div class="media-box">
+                    <video src="" preload="metadata" muted playsinline></video>
+                </div>
                 <p class="media-desc">Watch our efficient packaging staff securely wrapping bulk consignments with protective layers to ensure safe transit for clients.</p>
             </div>
 
             <div class="video-card" onclick="zoomCard(this)">
-                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <div class="media-box">
+                    <video src="" preload="metadata" muted playsinline></video>
+                </div>
                 <p class="media-desc">Explore a comprehensive walkthrough of our entire printing press floor highlighting our dedicated staff and modern machinery setup.</p>
             </div>
 
@@ -489,7 +505,23 @@
         function zoomCard(cardElement) {
             var overlay = document.getElementById("zoomOverlay");
             var contentDiv = document.getElementById("zoomedContent");
-            contentDiv.innerHTML = cardElement.innerHTML;
+            
+            // Clone the card HTML
+            var clonedContent = cardElement.innerHTML;
+            
+            // Insert a divider line between media-box and media-desc inside zoomed view
+            clonedContent = clonedContent.replace('<p class="media-desc">', '<div class="zoomed-divider"></div><p class="media-desc">');
+            
+            contentDiv.innerHTML = clonedContent;
+            
+            // Enable controls and play inside the zoomed view
+            var zoomedVideo = contentDiv.querySelector("video");
+            if (zoomedVideo) {
+                zoomedVideo.setAttribute("controls", "controls");
+                zoomedVideo.removeAttribute("muted");
+                zoomedVideo.play();
+            }
+
             overlay.classList.add("active");
             document.body.style.overflow = "hidden";
         }

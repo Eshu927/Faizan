@@ -118,11 +118,9 @@
         .leadership-section > p { text-align: center; color: var(--text-muted); font-size: 15px; margin-bottom: 40px; }
         .leadership-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
-        /* Leader Card with Improved BG */
         .leader-card { background: linear-gradient(145deg, #131b2e, #0b101b); border: 1px solid var(--border-color); border-radius: 20px; padding: 30px; text-align: center; box-shadow: var(--card-shadow); transition: all 0.4s ease; cursor: pointer; position: relative; overflow: hidden; }
         .leader-card:hover { transform: translateY(-6px); border-color: var(--accent-gold); box-shadow: 0 20px 40px rgba(251, 191, 36, 0.2); }
 
-        /* Profile Image Container */
         .leader-img-box { width: 90px; height: 90px; border-radius: 50%; overflow: hidden; margin: 0 auto 15px; border: 3px solid var(--accent-gold); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
         .leader-img-box img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -133,18 +131,28 @@
         .s-btn { background: rgba(251,191,36,0.1); color: var(--accent-gold); border: 1px solid var(--border-color); padding: 8px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; }
         .s-btn:hover { background: var(--accent-gold); color: var(--bg-deep); }
 
-        /* Gallery Section (15 Items) */
-        .gallery-container { max-width: 1300px; margin: 60px auto; padding: 0 20px; }
-        .gallery-container h2 { text-align: center; font-size: 32px; color: #ffffff; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; }
-        .gallery-container h2 span { color: var(--accent-gold); }
-        .gallery-container > p { text-align: center; color: var(--text-muted); font-size: 15px; margin-bottom: 40px; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        /* Separate Gallery & Video Sections with Multi-Color Cards & 25-30 Words Paragraphs */
+        .gallery-container, .video-container { max-width: 1300px; margin: 60px auto; padding: 0 20px; }
+        .gallery-container h2, .video-container h2 { text-align: center; font-size: 32px; color: #ffffff; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; }
+        .gallery-container h2 span, .video-container h2 span { color: var(--accent-gold); }
+        .gallery-container > p, .video-container > p { text-align: center; color: var(--text-muted); font-size: 15px; margin-bottom: 40px; }
+        .gallery-grid, .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         
-        .gallery-item { background: linear-gradient(145deg, #131b2e, #0b101b); border: 1px solid var(--border-color); border-radius: 15px; overflow: hidden; height: 200px; position: relative; box-shadow: var(--card-shadow); transition: all 0.4s ease; cursor: pointer; }
-        .gallery-item:hover { transform: translateY(-6px); border-color: var(--accent-gold); box-shadow: 0 20px 40px rgba(251, 191, 36, 0.2); }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(5,7,10,0.95)); padding: 15px 10px 10px; font-size: 13px; font-weight: 700; color: #ffffff; text-align: center; letter-spacing: 0.5px; }
+        .gallery-card, .video-card { background: linear-gradient(145deg, #131b2e, #0b101b); border-radius: 18px; overflow: hidden; position: relative; box-shadow: var(--card-shadow); transition: all 0.4s ease; cursor: pointer; display: flex; flex-direction: column; border: 2px solid var(--accent-gold); animation: multiColorBorder 6s infinite; padding: 15px; }
+        @keyframes multiColorBorder {
+            0% { border-color: #fbbf24; box-shadow: 0 0 15px rgba(251,191,36,0.3); }
+            33% { border-color: #38bdf8; box-shadow: 0 0 20px rgba(56,189,248,0.4); }
+            66% { border-color: #f97316; box-shadow: 0 0 20px rgba(249,115,22,0.4); }
+            100% { border-color: #fbbf24; box-shadow: 0 0 15px rgba(251,191,36,0.3); }
+        }
+        .gallery-card:hover, .video-card:hover { transform: translateY(-6px) scale(1.02); }
+        
+        .media-box { width: 100%; height: 180px; border-radius: 12px; overflow: hidden; position: relative; }
+        .gallery-card img, .video-card video { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-card:hover img, .video-card:hover video { transform: scale(1.1); }
+        
+        /* 25-30 words descriptive text under media box */
+        .media-desc { color: var(--text-muted); font-size: 13px; line-height: 1.6; text-align: center; margin-top: 15px; margin-bottom: 5px; }
 
         /* Info Section */
         .info-section { max-width: 1000px; margin: 60px auto; background: linear-gradient(145deg, #131b2e, #0b101b); border: 1px solid var(--border-color); border-radius: 20px; padding: 45px; box-shadow: var(--card-shadow); cursor: pointer; transition: all 0.4s ease; }
@@ -249,7 +257,7 @@
             <!-- Owner Profile (Faizan) -->
             <div class="leader-card" onclick="zoomCard(this)">
                 <div class="leader-img-box">
-                    <img src="faizan.jpg" alt="Faizan - Founder">
+                    <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Faizan - Founder">
                 </div>
                 <h3>Faizan Gulzar</h3>
                 <span class="role">Founder & Owner</span>
@@ -279,85 +287,144 @@
         </div>
     </div>
 
-    <!-- Gallery Section (15 Printing Press Images) -->
+    <!-- Separate Photo Gallery Section (15 Images Cards) -->
     <div class="gallery-container">
-        <h2>Inside Our <span>Printing Press</span></h2>
-        <p>A quick visual glimpse into our advanced machinery, production floor, and quality craftsmanship.</p>
+        <h2>Our Photo <span>Gallery</span></h2>
+        <p>Explore our high-resolution image collection showcasing state-of-the-art machinery and precision print works.</p>
         <div class="gallery-grid">
             
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 1">
-                <div class="gallery-caption">Offset Print Floor</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 1"></div>
+                <p class="media-desc">Experience our high-tech offset printing floor designed for bulk production with exceptional color accuracy and superior finishing standards across all items.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 2">
-                <div class="gallery-caption">Foil Stamping Suite</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 2"></div>
+                <p class="media-desc">Discover our advanced foil stamping suite delivering stunning metallic highlights, royal textures, and premium branding solutions for luxury corporate and wedding materials.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 3">
-                <div class="gallery-caption">Book Binding Unit</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 3"></div>
+                <p class="media-desc">Explore our professional book binding unit that ensures durable spine strength, clean cuts, and long-lasting quality for all educational and commercial registers.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 4">
-                <div class="gallery-caption">Digital Print Setup</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 4"></div>
+                <p class="media-desc">Take a look at our versatile digital print setup tailored for instant short-run requests, fast turnaround times, and high-definition marketing collateral delivery.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 5">
-                <div class="gallery-caption">Large Format Printers</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 5"></div>
+                <p class="media-desc">View our powerful large format printers creating vibrant outdoor flex banners, hoardings, and signboards that make your business brand stand out clearly.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 6">
-                <div class="gallery-caption">Paper Cutting Division</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 6"></div>
+                <p class="media-desc">Check out our precise paper cutting division maintaining exact dimensions and zero wastage across all types of commercial cardstock and paper sheets.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 7">
-                <div class="gallery-caption">Lamination & Finishing</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 7"></div>
+                <p class="media-desc">See our smooth lamination and finishing station providing reliable protection against moisture, tear, and daily wear while enhancing visual gloss finish.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 8">
-                <div class="gallery-caption">Packaging & Boxing</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 8"></div>
+                <p class="media-desc">Observe our secure packaging and boxing line ensuring all products reach our valued customers in pristine condition without any transit damage.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 9">
-                <div class="gallery-caption">Quality Control Desk</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 9"></div>
+                <p class="media-desc">Inspect our rigorous quality control desk where every single batch undergoes strict multi-step verification to maintain absolute product perfection.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 10">
-                <div class="gallery-caption">Dispatch & Delivery</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 10"></div>
+                <p class="media-desc">Review our prompt dispatch and delivery system dedicated to shipping client orders safely and punctually across Shopian and surrounding regions.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 11">
-                <div class="gallery-caption">Cardstock Pressing Line</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 11"></div>
+                <p class="media-desc">Witness our specialized cardstock pressing line designed for heavy-duty corporate folders, customized boxes, and thick invitation card creations.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 12">
-                <div class="gallery-caption">Invoice Perforation Station</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 12"></div>
+                <p class="media-desc">Explore our invoice perforation station providing clean tearing lines for multi-copy commercial receipt books and business transaction ledgers.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 13">
-                <div class="gallery-caption">Wedding Card Laser Suite</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 13"></div>
+                <p class="media-desc">Admire our intricate wedding card laser suite crafting delicate designer cuts and royal patterns tailored for memorable celebration events.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 14">
-                <div class="gallery-caption">Retail Bag Assembly</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 14"></div>
+                <p class="media-desc">View our sustainable retail bag assembly unit producing branded paper carrier bags built for eco-friendly shopping experiences and retail outlets.</p>
             </div>
 
-            <div class="gallery-item" onclick="zoomCard(this)">
-                <img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Press 15">
-                <div class="gallery-caption">Hardbound Diary Studio</div>
+            <div class="gallery-card" onclick="zoomCard(this)">
+                <div class="media-box"><img src="idpic/iam_faixu_313_20260924_153316_841.jpg" alt="Photo 15"></div>
+                <p class="media-desc">Discover our elegant hardbound diary studio crafting durable and executive organizers designed for professional corporate gifting and personal use.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Separate Video Gallery Section (10 Videos Cards) -->
+    <div class="video-container">
+        <h2>Our Video <span>Gallery</span></h2>
+        <p>Watch live operational clips and behind-the-scenes video highlights from our active printing press floor.</p>
+        <div class="video-grid">
+            
+            <div class="video-card" onclick="zoomCard(this)">
+                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <p class="media-desc">Watch a complete live demonstration of our high-speed offset printing machine operating smoothly to fulfill large-scale commercial publishing orders efficiently.</p>
+            </div>
+
+            <div class="video-card" onclick="zoomCard(this)">
+                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <p class="media-desc">Observe the fascinating process of hot foil stamping in action, creating brilliant metallic gold and silver impressions on luxury packaging boxes.</p>
+            </div>
+
+            <div class="video-card" onclick="zoomCard(this)">
+                <div class="media-box"><video src="videos/musavir_mir45_20260925_175131_952.mp4musavir_mir45_20260925_175131_952.mp4" autoplay muted loop playsinline></video></div>
+                <p class="media-desc">Catch a glimpse of our automated book binding unit stitching and gluing multiple notebook sections together with flawless structural precision.</p>
+            </div>
+
+            <div class="video-card" onclick="zoomCard(this)">
+                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <p class="media-desc">See our advanced digital printing setup executing rapid color prints with incredible clarity and vibrant hues for urgent customer requests.</p>
+            </div>
+
+            <div class="video-card" onclick="zoomCard(this)">
+                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <p class="media-desc">Experience our heavy-duty paper cutting machine trimming massive stacks of paper with absolute accuracy and seamless operational safety.</p>
+            </div>
+
+            <div class="video-card" onclick="zoomCard(this)">
+                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <p class="media-desc">Watch our lamination machine applying protective glossy coatings over printed menu cards to safeguard them against spills and daily wear.</p>
+            </div>
+
+            <div class="video-card" onclick="zoomCard(this)">
+                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <p class="media-desc">Take a quick tour of our laser cutting suite carving complex artistic patterns on premium wedding invitation cards with extreme precision.</p>
+            </div>
+
+            <div class="video-card" onclick="zoomCard(this)">
+                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <p class="media-desc">Observe our quality inspection team carefully examining finished prints under bright studio lights to catch even minor imperfections instantly.</p>
+            </div>
+
+            <div class="video-card" onclick="zoomCard(this)">
+                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <p class="media-desc">Watch our efficient packaging staff securely wrapping bulk consignments with protective layers to ensure safe transit for clients.</p>
+            </div>
+
+            <div class="video-card" onclick="zoomCard(this)">
+                <div class="media-box"><video src="" autoplay muted loop playsinline></video></div>
+                <p class="media-desc">Explore a comprehensive walkthrough of our entire printing press floor highlighting our dedicated staff and modern machinery setup.</p>
             </div>
 
         </div>
